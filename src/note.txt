@@ -1,0 +1,3 @@
+The whole godot project goes here.
+
+Any changes must be done on individual files (scripts, scenes etc.), to keep track with changes and minimize errors.

@@ -16,10 +16,11 @@ albedo_texture = ExtResource("2_q7v10")
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_ri38e")]
+transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -0.000487804, -0.0208278, 0.0150979)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.25, 0)
+transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, 0, 4, 0.015)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
@@ -37,7 +38,7 @@ size = Vector3(16, 0.5, 17)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Ground/Small obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0333037, 0.012126, 0.734243)
 size = Vector3(1, 1, 2.5)
 
 [node name="Large Obstacle" parent="Ground" instance=ExtResource("4_6g6qi")]
@@ -49,5 +50,5 @@ transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 1.75, 0, 0
 size = Vector3(1, 1, 2)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Ground/Large Obstacle"]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1.75, 0, 0.433)
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1.66165, -0.0997515, 0.45389)
 size = Vector3(1, 1, 2)

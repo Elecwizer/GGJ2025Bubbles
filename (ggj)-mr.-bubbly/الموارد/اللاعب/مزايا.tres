@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="المزايا" load_steps=2 format=3 uid="uid://bekc4d63xfcck"]
+
+[ext_resource type="Script" path="res://الموارد/اللاعب/مزايا_اللاعب.gd" id="1_t4wbv"]
+
+[resource]
+script = ExtResource("1_t4wbv")
+sizeMultiplier = 1.0
+moistureMeter = 60.0
+playerSpeed = 5.0
+slip = 0.0

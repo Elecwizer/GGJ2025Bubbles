@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bolycepi7n7ue" path="res://الموارد/UI/202501241636_32019_page-0001.jpg" id="1_nhilq"]
 [ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="2_r3kx7"]
-[ext_resource type="Script" path="res://المشاهد/Button6.gd" id="3_snx1e"]
+[ext_resource type="Script" path="res://البرمجة/Button6.gd" id="3_snx1e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08iir"]
 texture = ExtResource("1_nhilq")

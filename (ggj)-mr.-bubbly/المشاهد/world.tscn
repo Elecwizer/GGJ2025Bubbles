@@ -1,27 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://3i7ds7brcc2v"]
+[gd_scene load_steps=8 format=3 uid="uid://3i7ds7brcc2v"]
 
-[ext_resource type="Texture2D" uid="uid://bh313j2sy5p55" path="res://addons/kenney_prototype_textures/light/texture_03.png" id="1_04jl5"]
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="2_q7v10"]
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="2_ri38e"]
+[ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_6g6qi"]
+[ext_resource type="PackedScene" uid="uid://kct5kqe57kc4" path="res://المشاهد/عوائق_للصغير.tscn" id="5_7rk0h"]
+[ext_resource type="Texture2D" uid="uid://btyss1nob4h7i" path="res://addons/kenney_prototype_textures/orange/texture_01.png" id="6_ajhqa"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hje12"]
-albedo_color = Color(0.821789, 0.821789, 0.821789, 1)
-albedo_texture = ExtResource("1_04jl5")
-uv1_scale = Vector3(2, 2, 2)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scm0m"]
+albedo_texture = ExtResource("6_ajhqa")
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
 albedo_texture = ExtResource("2_q7v10")
 
 [node name="World" type="Node3D"]
-
-[node name="Ground" type="CSGCombiner3D" parent="."]
-material_override = SubResource("StandardMaterial3D_hje12")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
-material_override = SubResource("StandardMaterial3D_g2446")
-size = Vector3(16, 0.5, 17)
 
 [node name="Player" parent="." instance=ExtResource("2_ri38e")]
 
@@ -31,3 +23,30 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
+
+[node name="Ground" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_scm0m")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+material_override = SubResource("StandardMaterial3D_g2446")
+size = Vector3(16, 0.5, 17)
+
+[node name="Small obstacle" parent="Ground" instance=ExtResource("5_7rk0h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground/Small obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.75)
+size = Vector3(1, 1, 2.5)
+
+[node name="Large Obstacle" parent="Ground" instance=ExtResource("4_6g6qi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.51725)
+material_overlay = SubResource("StandardMaterial3D_scm0m")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground/Large Obstacle"]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 1.75, 0, 0.433012)
+size = Vector3(1, 1, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Ground/Large Obstacle"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1.75, 0, 0.433)
+size = Vector3(1, 1, 2)

@@ -9,3 +9,4 @@ uv1_triplanar = true
 [node name="Small obstacle" type="CSGCombiner3D"]
 material_override = SubResource("StandardMaterial3D_vpvhq")
 operation = 2
+use_collision = true

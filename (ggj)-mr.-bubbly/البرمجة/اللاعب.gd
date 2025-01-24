@@ -1,32 +1,34 @@
 extends CharacterBody3D
 
+var playerProperties: المزايا = preload("res://الموارد/اللاعب/مزايا.tres")
+const CAMERA_DRAG = 0.05
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+func changeSpeed(value) -> void:
+	playerProperties.playerSpeed = value
 
-var stats: المزايا = preload("res://الموارد/اللاعب/مزاياك.tres")
+func updateSize(mult: float) -> void:
+	playerProperties.sizeMultiplier = mult
+	scale = Vector3(scale.x * playerProperties.sizeMultiplier,scale.y,scale.z * playerProperties.sizeMultiplier)
+	changeSpeed(playerProperties.playerSpeed*(1/mult**1.2)) #semi-exponential decrease in speed as size increases
+	%Camera3D.position.y += mult-1 # update the camera's y position to keep the height static
+	
+func _ready() -> void:
+	updateSize(1)
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	#if not is_on_floor():
-		#velocity += get_gravity() * delta
-#
-	## Handle jump.
-	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
 	
-	%Camera3D.global_position.x += 0.1*(global_position.x-%Camera3D.global_position.x)
-	%Camera3D.global_position.z += 0.1*(global_position.z-%Camera3D.global_position.z)
+	# Camera drag
+	%Camera3D.position.x += CAMERA_DRAG*(position.x-%Camera3D.position.x)
+	%Camera3D.position.z += CAMERA_DRAG*(position.z-%Camera3D.position.z)
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir := Input.get_vector("a", "d", "w", "s")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * playerProperties.playerSpeed
+		velocity.z = direction.z * playerProperties.playerSpeed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, playerProperties.playerSpeed)
+		velocity.z = move_toward(velocity.z, 0, playerProperties.playerSpeed)
 
 	move_and_slide()

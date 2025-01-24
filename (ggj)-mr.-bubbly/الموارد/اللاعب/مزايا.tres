@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_t4wbv")
-playerSize = 10.0
+sizeMultiplier = 1.0
 moistureMeter = 60.0
 playerSpeed = 5.0
 slip = 0.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqxrrnfbsyu6t"]
+[gd_scene load_steps=5 format=3 uid="uid://cqxrrnfbsyu6t"]
 
 [ext_resource type="Texture2D" uid="uid://bolycepi7n7ue" path="res://الموارد/UI/202501241636_32019_page-0001.jpg" id="1_excfs"]
+[ext_resource type="Script" path="res://المشاهد/main_menu.gd" id="1_hcsu0"]
 [ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="2_lmcr6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cagjf"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hcsu0")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -101,3 +103,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_lmcr6")
 theme_override_font_sizes/font_size = 72
 text = "Bubbles bound"
+
+[connection signal="pressed" from="Select_level" to="." method="_on_select_level_pressed"]

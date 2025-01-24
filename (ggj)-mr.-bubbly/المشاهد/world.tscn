@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://3i7ds7brcc2v"]
+
+[ext_resource type="Texture2D" uid="uid://bh313j2sy5p55" path="res://addons/kenney_prototype_textures/light/texture_03.png" id="1_04jl5"]
+[ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="2_q7v10"]
+[ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="2_ri38e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hje12"]
+albedo_color = Color(0.821789, 0.821789, 0.821789, 1)
+albedo_texture = ExtResource("1_04jl5")
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
+albedo_texture = ExtResource("2_q7v10")
+
+[node name="World" type="Node3D"]
+
+[node name="Ground" type="CSGCombiner3D" parent="."]
+material_override = SubResource("StandardMaterial3D_hje12")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+material_override = SubResource("StandardMaterial3D_g2446")
+size = Vector3(16, 0.5, 17)
+
+[node name="Player" parent="." instance=ExtResource("2_ri38e")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3.25, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)

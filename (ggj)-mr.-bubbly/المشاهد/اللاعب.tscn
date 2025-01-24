@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dybnnowbvabs4"]
+
+[ext_resource type="Script" path="res://البرمجة/اللاعب.gd" id="1_sd41a"]
+[ext_resource type="Shader" path="res://التأثيرات المرئية/Type1.gdshader" id="2_tq3jn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_idot7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_olcdv"]
+render_priority = 0
+shader = ExtResource("2_tq3jn")
+shader_parameter/fuwafuwa_speed = 1.5
+shader_parameter/fuwafuwa_size = 0.05
+shader_parameter/outline_color = Vector4(0.45, 0.7, 1, 1)
+shader_parameter/outline_ratio = 1.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/noise_scale = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_hpty1"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_sd41a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_idot7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_olcdv")
+mesh = SubResource("SphereMesh_hpty1")

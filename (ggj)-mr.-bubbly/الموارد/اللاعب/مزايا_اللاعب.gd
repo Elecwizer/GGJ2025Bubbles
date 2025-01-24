@@ -1,7 +1,12 @@
 extends Resource
 class_name المزايا
 
-@export var sizeMultiplier: float = 1
-@export var moistureMeter: float = 60
-@export var playerSpeed: float = 3
-@export var slip: float = 0
+#Moisture meter properties
+@export var moistureMeter: float
+@export var moistureMultiplier: float = 1.0
+@export var barTime: float = 20 # in seconds
+
+#Player properties
+@export var sizeMultiplier: float = 1.0
+@export var playerSpeed: float = 3.0
+@export var slip: float = 0.0

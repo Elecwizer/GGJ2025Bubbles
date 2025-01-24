@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://ma8c35hj476l"]
+
+[ext_resource type="Texture2D" uid="uid://bolycepi7n7ue" path="res://الموارد/UI/202501241636_32019_page-0001.jpg" id="1_nhilq"]
+[ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="2_r3kx7"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08iir"]
+texture = ExtResource("1_nhilq")
+
+[node name="Select_level_Page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_08iir")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 443.0
+offset_top = 103.0
+offset_right = 729.0
+offset_bottom = 138.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r3kx7")
+theme_override_font_sizes/font_size = 31
+text = "Select Level"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 219.0
+offset_right = 342.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("2_r3kx7")
+text = "1"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 327.0
+offset_right = 342.0
+offset_bottom = 370.0
+theme_override_fonts/font = ExtResource("2_r3kx7")
+text = "3"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 296.0
+offset_top = 424.0
+offset_right = 342.0
+offset_bottom = 467.0
+theme_override_fonts/font = ExtResource("2_r3kx7")
+text = "5"
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 215.0
+offset_right = 820.0
+offset_bottom = 258.0
+theme_override_fonts/font = ExtResource("2_r3kx7")
+text = "2"
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 323.0
+offset_right = 820.0
+offset_bottom = 366.0
+theme_override_fonts/font = ExtResource("2_r3kx7")
+text = "4"
+
+[node name="Button6" type="Button" parent="."]
+layout_mode = 0
+offset_left = 774.0
+offset_top = 420.0
+offset_right = 820.0
+offset_bottom = 463.0
+theme_override_fonts/font = ExtResource("2_r3kx7")
+text = "6"
+
+[node name="Button7" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.5
+offset_top = 10.5
+offset_right = 82.5
+offset_bottom = 53.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_r3kx7")
+text = "Random Level"

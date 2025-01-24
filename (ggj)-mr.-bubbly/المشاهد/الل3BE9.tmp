@@ -4,6 +4,9 @@
 [ext_resource type="Shader" path="res://التأثيرات المرئية/Type1.gdshader" id="2_tq3jn"]
 [ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="3_6o68d"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_nf8uk"]
+height = 0.4
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_olcdv"]
 render_priority = 0
 shader = ExtResource("2_tq3jn")
@@ -27,11 +30,12 @@ colors = PackedColorArray(0.144749, 0.554038, 0.891166, 1, 0.568576, 0.780348, 0
 gradient = SubResource("Gradient_h1rog")
 width = 2
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_tmt0d"]
-radius = 0.536022
-
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_sd41a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, 0)
+shape = SubResource("CylinderShape3D_nf8uk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = SubResource("ShaderMaterial_olcdv")
@@ -66,7 +70,3 @@ scroll_active = false
 shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0239437, 0)
-shape = SubResource("SphereShape3D_tmt0d")

@@ -21,9 +21,11 @@ transform = Transform3D(1, 0, 0, 0, 0.0999834, 0.0182377, 0, -0.00182377, 0.9998
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, 0, 4, 0.015)
+projection = 1
+size = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 3, 0)
+transform = Transform3D(0.866025, -1.54033e-08, 0.5, -0.482963, -0.258819, 0.836516, 0.12941, -0.965926, -0.224144, 0, 3, 0)
 
 [node name="Ground" type="CSGCombiner3D" parent="."]
 material_override = SubResource("StandardMaterial3D_scm0m")

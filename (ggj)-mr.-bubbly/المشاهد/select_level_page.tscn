@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ma8c35hj476l"]
+[gd_scene load_steps=5 format=3 uid="uid://ma8c35hj476l"]
 
 [ext_resource type="Texture2D" uid="uid://bolycepi7n7ue" path="res://الموارد/UI/202501241636_32019_page-0001.jpg" id="1_nhilq"]
 [ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="2_r3kx7"]
+[ext_resource type="Script" path="res://المشاهد/Button6.gd" id="3_snx1e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_08iir"]
 texture = ExtResource("1_nhilq")
@@ -87,6 +88,7 @@ offset_right = 820.0
 offset_bottom = 463.0
 theme_override_fonts/font = ExtResource("2_r3kx7")
 text = "6"
+script = ExtResource("3_snx1e")
 
 [node name="Button7" type="Button" parent="."]
 layout_mode = 1

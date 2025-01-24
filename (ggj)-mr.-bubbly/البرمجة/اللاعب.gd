@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	%Camera3D.position.x += CAMERA_DRAG*(position.x-%Camera3D.position.x)
 	%Camera3D.position.z += CAMERA_DRAG*(position.z-%Camera3D.position.z)
 	
+
 	var input_dir := Input.get_vector("a", "d", "w", "s")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
@@ -28,6 +29,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * playerProperties.playerSpeed
 		velocity.z = direction.z * playerProperties.playerSpeed
 	else:
+
 		velocity.x = move_toward(velocity.x, 0, playerProperties.playerSpeed)
 		velocity.z = move_toward(velocity.z, 0, playerProperties.playerSpeed)
 

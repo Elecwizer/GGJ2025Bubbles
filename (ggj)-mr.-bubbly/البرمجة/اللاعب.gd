@@ -20,6 +20,7 @@ func on_water_touch(isTouched: bool) -> void:
 		playerProperties.moistureMultiplier = 6
 	else:
 		playerProperties.moistureMultiplier = 1
+	
 
 func _ready() -> void:
 	TouchedWater.connect(on_water_touch)

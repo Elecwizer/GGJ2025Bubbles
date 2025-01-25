@@ -1,4 +1,7 @@
+
+
 [gd_scene load_steps=10 format=3 uid="uid://3i7ds7brcc2v"]
+
 
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_oij6t"]
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="2_cwmnc"]
@@ -49,7 +52,6 @@ size = Vector3(1, 1, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 material_override = SubResource("StandardMaterial3D_g2446")
 size = Vector3(16, 0.5, 17)
-
 [node name="Bubble" parent="." instance=ExtResource("6_u7xfj")]
 
 [node name="WaterSpots" parent="." instance=ExtResource("7_iju4i")]

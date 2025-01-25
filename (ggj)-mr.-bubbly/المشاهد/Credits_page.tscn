@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://cec8m73iyh45h"]
+
+[ext_resource type="Texture2D" uid="uid://bolycepi7n7ue" path="res://الموارد/UI/202501241636_32019_page-0001.jpg" id="1_60s0i"]
+[ext_resource type="Script" path="res://المشاهد/Credits_page.gd" id="1_aa32l"]
+[ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="2_jox6m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_m0yc7"]
+texture = ExtResource("1_60s0i")
+
+[node name="Credits_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aa32l")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_m0yc7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 87.0
+offset_right = 747.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jox6m")
+theme_override_font_sizes/font_size = 54
+text = "Credits"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 214.0
+offset_right = 1169.0
+offset_bottom = 531.0
+theme_override_colors/font_color = Color(0.286275, 0.137255, 0.478431, 1)
+theme_override_fonts/font = ExtResource("2_jox6m")
+theme_override_font_sizes/font_size = 35
+text = "Elecwizer: Game design, Level design
+
+Ormfarook: Game dev, 2D art
+
+SushieM: Game dev, programming
+
+Mohammed Essa: Game dev, VFX, Level building"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 484.0
+offset_top = 554.0
+offset_right = 635.0
+offset_bottom = 607.0
+theme_override_fonts/font = ExtResource("2_jox6m")
+theme_override_font_sizes/font_size = 30
+text = "Home"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -12,6 +12,7 @@ class_name المزايا
 @export var sizeMultiplier: float = 1.0
 @export var playerSpeed: float = 3.0
 @export var slip: float = 0.0
+
 @export var HP:float = 12
 var dead:bool = false
 
@@ -22,3 +23,4 @@ func onHit(damage:float = 3):
 	if HP <= 0:
 		dead = true
 		
+@export var numberOfBubbles = 0

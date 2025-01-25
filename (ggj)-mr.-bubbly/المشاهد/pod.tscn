@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://di83iswsdv2t6"]
+
+[ext_resource type="Script" path="res://البرمجة/pod.gd" id="1_26lx6"]
+[ext_resource type="PackedScene" uid="uid://cym323ekby041" path="res://المشاهد/المراحل/1- bubbly!.tscn" id="2_tuy4t"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xayqt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t04mo"]
+size = Vector3(1.13186, 1.5775, 1.09692)
+
+[node name="Pod" type="Area3D"]
+transform = Transform3D(2.19379, 0, 0, 0, 1, 0, 0, 0, 2.13428, -2.26623, 0.0116701, -0.996445)
+script = ExtResource("1_26lx6")
+nextLevel = ExtResource("2_tuy4t")
+minimumBubbles = 1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.037448, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_xayqt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00680923, 0.782341, 0.00402832)
+shape = SubResource("BoxShape3D_t04mo")

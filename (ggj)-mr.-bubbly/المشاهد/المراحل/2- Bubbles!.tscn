@@ -5,12 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="3_6r57h"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_3717x"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_lgr31"]
+
 [ext_resource type="PackedScene" uid="uid://cf5uhd72d4ttu" path="res://المشاهد/الشوك.tscn" id="6_o7cl0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dp2yv"]
 size = Vector3(7.6, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4swim"]
+
 
 [node name="2-Bubbles!" type="Node3D"]
 

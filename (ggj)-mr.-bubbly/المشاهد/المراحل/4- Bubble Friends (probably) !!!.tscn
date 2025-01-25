@@ -1,3 +1,27 @@
-[gd_scene format=3 uid="uid://b5v4s8qtnfb4h"]
+[gd_scene load_steps=2 format=3 uid="uid://b5v4s8qtnfb4h"]
+
+[ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="1_d6mtu"]
 
 [node name="4-BubbleFriends(probably)!!!" type="Node3D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_d6mtu")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(16, 1, 9)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, 0)
+size = Vector3(1, 1, 11)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 0, 0)
+size = Vector3(1, 1, 11)

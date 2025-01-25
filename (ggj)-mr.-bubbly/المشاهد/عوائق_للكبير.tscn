@@ -8,3 +8,4 @@ uv1_triplanar = true
 
 [node name="Large Obstacle" type="CSGCombiner3D"]
 material_override = SubResource("StandardMaterial3D_scm0m")
+use_collision = true

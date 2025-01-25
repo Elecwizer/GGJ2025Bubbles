@@ -10,7 +10,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _on_select_level_pressed():
 	get_tree().change_scene_to_file("res://المشاهد/select_level_page.tscn")
 

@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://dybnnowbvabs4"]
+
+[ext_resource type="Script" path="res://البرمجة/اللاعب.gd" id="1_sd41a"]
+[ext_resource type="Shader" path="res://التأثيرات المرئية/Type1.gdshader" id="2_tq3jn"]
+[ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="3_6o68d"]
+[ext_resource type="Script" path="res://البرمجة/BubbleMeter.gd" id="3_mkn38"]
+[ext_resource type="AudioStream" uid="uid://jtbgx22o6qgr" path="res://SoundEffects/BackgroundMusic.mp3" id="5_wdcnw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpa1j"]
+render_priority = 0
+shader = ExtResource("2_tq3jn")
+shader_parameter/fuwafuwa_speed = 1.5
+shader_parameter/fuwafuwa_size = 0.05
+shader_parameter/outline_color = Vector4(0.45, 0.7, 1, 1)
+shader_parameter/outline_ratio = 1.0
+shader_parameter/noise_speed = 0.2
+shader_parameter/noise_scale = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_udt1w"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yntid"]
+specular_color = Color(0.133019, 0.150402, 0.620367, 1)
+
+[sub_resource type="Gradient" id="Gradient_h1rog"]
+offsets = PackedFloat32Array(0.155844, 1)
+colors = PackedColorArray(0.144749, 0.554038, 0.891166, 1, 0.568576, 0.780348, 0.990936, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_chgnn"]
+gradient = SubResource("Gradient_h1rog")
+width = 2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tmt0d"]
+radius = 0.536022
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+script = ExtResource("1_sd41a")
+metadata/Player = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_hpa1j")
+mesh = SubResource("SphereMesh_udt1w")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="BubbleMeter" type="Node2D" parent="UI"]
+position = Vector2(7, 0)
+script = ExtResource("3_mkn38")
+
+[node name="Empty" type="Sprite2D" parent="UI/BubbleMeter"]
+position = Vector2(46.375, 266.125)
+scale = Vector2(73.25, 515.75)
+texture = SubResource("CanvasTexture_yntid")
+
+[node name="MeterBar" type="Sprite2D" parent="UI/BubbleMeter"]
+light_mask = 0
+position = Vector2(46, 266.938)
+scale = Vector2(38, 517.875)
+texture = SubResource("GradientTexture1D_chgnn")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+offset_left = 7.0
+offset_top = 528.0
+offset_right = 101.0
+offset_bottom = 538.0
+theme_override_fonts/normal_font = ExtResource("3_6o68d")
+theme_override_font_sizes/normal_font_size = 8
+text = "Moisture meter"
+scroll_active = false
+shortcut_keys_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_tmt0d")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_wdcnw")
+volume_db = -28.0
+pitch_scale = 0.85
+autoplay = true

@@ -4,6 +4,7 @@ class_name playerScript
 signal TouchedWater
 signal PlaySound
 signal TouchedBubbles
+signal Hit
 const CAMERA_DRAG = 0.05
 const sizeIncrease = 1.45
 
@@ -39,7 +40,11 @@ func _ready() -> void:
 	PlaySound.connect(play_sound)
 	TouchedWater.connect(on_water_touch)
 	TouchedBubbles.connect(on_bubble_touch)
-	
+	Hit.connect(hitted)
+
+func hitted():
+	playerProperties.onHit()
+	print(playerProperties.HP)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and playerProperties.numberOfBubbles > 0:

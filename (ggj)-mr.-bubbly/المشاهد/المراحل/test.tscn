@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_m656j"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_43x4n"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="5_lwfkv"]
+
 [ext_resource type="PackedScene" uid="uid://brkxncl7pe4jo" path="res://المشاهد/bubble.tscn" id="6_u7xfj"]
 [ext_resource type="PackedScene" uid="uid://dqn2g0bsbwl72" path="res://المشاهد/water_spots.tscn" id="7_iju4i"]
 [ext_resource type="PackedScene" uid="uid://di83iswsdv2t6" path="res://المشاهد/pod.tscn" id="9_i0dqd"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
 albedo_texture = ExtResource("3_m656j")
@@ -26,7 +28,6 @@ transform = Transform3D(0.866025, -1.54033e-08, 0.5, -0.482963, -0.258819, 0.836
 
 [node name="Large Obstacle" parent="." instance=ExtResource("5_lwfkv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.51725)
-use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Large Obstacle"]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 1.75, 0, 0.433012)

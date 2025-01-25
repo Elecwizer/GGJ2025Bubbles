@@ -41,8 +41,11 @@ func _ready() -> void:
 	PlaySound.connect(play_sound)
 	TouchedWater.connect(on_water_touch)
 	TouchedBubbles.connect(on_bubble_touch)
-	Hit.connect(playerProperties.onHit())
-	
+	Hit.connect(hitted)
+
+func hitted():
+	playerProperties.onHit()
+	print(playerProperties.HP)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and numberOfBubbles > 0:

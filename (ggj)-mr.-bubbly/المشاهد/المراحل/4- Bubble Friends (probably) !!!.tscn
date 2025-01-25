@@ -11,7 +11,6 @@
 
 [node name="PlayerCamera" parent="." instance=ExtResource("1_uapty")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, -0.375968, 5.69706, -0.0853606)
 
 [node name="Player" parent="." instance=ExtResource("2_5vcb2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14749, 0.75, 3.37364)

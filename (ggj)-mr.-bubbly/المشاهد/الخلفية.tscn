@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmwxduyj7xaww"]
+[gd_scene load_steps=2 format=3 uid="uid://bmwxduyj7xaww"]
 
-[ext_resource type="Texture2D" uid="uid://btyss1nob4h7i" path="res://addons/kenney_prototype_textures/orange/texture_01.png" id="1_kaiuv"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ruum"]
-albedo_texture = ExtResource("1_kaiuv")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ux8pv"]
+albedo_color = Color(0.984314, 0.984314, 0.984314, 1)
 
 [node name="Ground" type="CSGCombiner3D"]
-material_override = SubResource("StandardMaterial3D_3ruum")
+material_override = SubResource("StandardMaterial3D_ux8pv")
 use_collision = true

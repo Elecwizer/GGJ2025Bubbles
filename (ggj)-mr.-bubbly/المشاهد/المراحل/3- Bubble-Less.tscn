@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="2_ea0i0"]
 [ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="3_ovr78"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_akk0h"]
-[ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_yix3f"]
+[ext_resource type="PackedScene" path="res://المشاهد/bubble_group.tscn" id="5_yix3f"]
 [ext_resource type="PackedScene" uid="uid://dqn2g0bsbwl72" path="res://المشاهد/water_spots.tscn" id="6_6opu3"]
 
 [node name="3-Bubble-less" type="Node3D"]

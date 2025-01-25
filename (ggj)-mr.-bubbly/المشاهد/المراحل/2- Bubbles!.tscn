@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://kw4b746bnxce"]
+[gd_scene load_steps=10 format=3 uid="uid://kw4b746bnxce"]
 
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_rhtd5"]
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="2_5asnc"]
 [ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="3_6r57h"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_3717x"]
-[ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_lgr31"]
+[ext_resource type="PackedScene" path="res://المشاهد/bubble_group.tscn" id="5_lgr31"]
 [ext_resource type="PackedScene" uid="uid://cf5uhd72d4ttu" path="res://المشاهد/الشوك.tscn" id="6_o7cl0"]
+[ext_resource type="Material" uid="uid://b3oustijkmr5k" path="res://الألوان والرسومات/Spikes.material" id="7_ganvu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dp2yv"]
 size = Vector3(7.6, 1, 1)
@@ -67,28 +68,35 @@ shape = SubResource("BoxShape3D_dp2yv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="spike"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, -0.3)
+material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="spike"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1, 0, -0.3)
+material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="spike"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2, 0, -0.3)
+material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="spike"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 3, 0, -0.3)
+material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="spike"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -1, 0, -0.3)
+material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="spike"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -2, 0, -0.3)
+material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="spike"]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3, 0, -0.3)
+material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")

@@ -15,7 +15,7 @@ albedo_texture = ExtResource("3_m656j")
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_oij6t")]
-transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, 0, 0.5, 0)
 
 [node name="PlayerCamera" parent="." instance=ExtResource("2_cwmnc")]
 unique_name_in_owner = true
@@ -52,8 +52,8 @@ size = Vector3(16, 0.5, 17)
 
 [node name="Bubble" parent="." instance=ExtResource("6_u7xfj")]
 
-[node name="WaterSpots" parent="." instance=ExtResource("7_iju4i")]
-transform = Transform3D(1, 0, 0, 0, 0.0876814, 0, 0, 0, 1, -4.93425, 0.0420275, -1.49059)
-
 [node name="BubbleGroup" parent="." instance=ExtResource("5_43x4n")]
 transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -4.82566, -0.0375015, 2.89122)
+
+[node name="WaterSpots" parent="." instance=ExtResource("7_iju4i")]
+transform = Transform3D(1, 0, 0, 0, 0.0876814, 0, 0, 0, 1, -4.93425, 0.0420275, -1.49059)

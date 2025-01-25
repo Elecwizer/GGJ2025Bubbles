@@ -22,6 +22,22 @@ transform = Transform3D(0.866025, 4.10454e-07, 0.5, -0.482963, -0.258819, 0.8365
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(16, 1, 9)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, 0)
+size = Vector3(1, 1, 11)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 0, 0)
+size = Vector3(1, 1, 11)
+
 [node name="Large Obstacle" parent="." instance=ExtResource("4_akk0h")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Large Obstacle"]

@@ -81,3 +81,6 @@ transform = Transform3D(1, 0, 0, 0, 0.0876814, 0, 0, 0, 1, -1.57789, 0.0420275, 
 [node name="Pod" parent="." instance=ExtResource("7_nnc4n")]
 transform = Transform3D(2.19379, 0, 0, 0, 1, 0, 0, 0, 2.13428, -5.9019, 0.0116702, -3.13425)
 nextLevel = ExtResource("8_xnxr1")
+
+minimumBubbles = 2
+

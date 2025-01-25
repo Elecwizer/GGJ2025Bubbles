@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://di83iswsdv2t6"]
+[gd_scene load_steps=5 format=3 uid="uid://cbofsouu45dxq"]
 
 [ext_resource type="Script" path="res://البرمجة/pod.gd" id="1_26lx6"]
 [ext_resource type="PackedScene" uid="uid://cym323ekby041" path="res://المشاهد/المراحل/1- bubbly!.tscn" id="2_tuy4t"]

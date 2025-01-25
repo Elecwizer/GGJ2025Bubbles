@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_akk0h"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_yix3f"]
 [ext_resource type="PackedScene" uid="uid://dqn2g0bsbwl72" path="res://المشاهد/water_spots.tscn" id="6_6opu3"]
-[ext_resource type="PackedScene" uid="uid://di83iswsdv2t6" path="res://المشاهد/pod.tscn" id="7_nnc4n"]
+[ext_resource type="PackedScene" uid="uid://cbofsouu45dxq" path="res://المشاهد/pod.tscn" id="7_nnc4n"]
 [ext_resource type="PackedScene" uid="uid://b5v4s8qtnfb4h" path="res://المشاهد/المراحل/4- Bubble Friends (probably) !!!.tscn" id="8_xnxr1"]
 
 [node name="3-Bubble-less" type="Node3D"]

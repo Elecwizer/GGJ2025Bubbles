@@ -1,3 +1,21 @@
-[gd_scene format=3 uid="uid://cym323ekby041"]
+[gd_scene load_steps=4 format=3 uid="uid://cym323ekby041"]
+
+[ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="1_jeubb"]
+[ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_jmmf1"]
+[ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_kjgqb"]
 
 [node name="1-Bubbly!" type="Node3D"]
+
+[node name="PlayerCamera" parent="." instance=ExtResource("1_kjgqb")]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource("1_jmmf1")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -1.54033e-08, 0.5, -0.482963, -0.258819, 0.836516, 0.12941, -0.965926, -0.224144, 0, 3, 0)
+
+[node name="Ground" parent="." instance=ExtResource("1_jeubb")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(16, 1, 9)

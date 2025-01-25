@@ -8,7 +8,6 @@ const CAMERA_DRAG = 0.05
 const sizeIncrease = 1.75
 
 var playerProperties: المزايا = preload("res://الموارد/اللاعب/مزايا.tres")
-var numberOfBubbles = 0
 
 func changeSpeed(value) -> void:
 	playerProperties.playerSpeed = value
@@ -32,7 +31,7 @@ func play_sound(resource: String) -> void:
 	$Sound.play()
 
 func on_bubble_touch() -> void:
-	numberOfBubbles += 1
+	playerProperties.numberOfBubbles += 1
 	updateSize(sizeIncrease)
 	pass
 
@@ -43,10 +42,11 @@ func _ready() -> void:
 	
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton and numberOfBubbles > 0:
+	if event is InputEventMouseButton and playerProperties.numberOfBubbles > 0:
 		var relativePlayer = Vector2(DisplayServer.window_get_size().x / 2,DisplayServer.window_get_size().y / 2)
 		var relativeVector = event.position - relativePlayer
-		numberOfBubbles -= 1
+		playerProperties.numberOfBubbles -= 1
+		
 		updateSize((1/sizeIncrease))
 		print(relativeVector.normalized())
 		

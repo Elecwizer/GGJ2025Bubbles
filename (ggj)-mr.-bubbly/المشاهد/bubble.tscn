@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bijtnhpacdf8l"]
+[gd_scene load_steps=6 format=3 uid="uid://brkxncl7pe4jo"]
 
 [ext_resource type="Script" path="res://البرمجة/Bubble.gd" id="1_v64pe"]
 [ext_resource type="Shader" path="res://التأثيرات المرئية/Type1.gdshader" id="2_140xr"]
@@ -19,15 +19,14 @@ shader_parameter/noise_scale = 0.5
 size = Vector3(0.678822, 0.672789, 0.565115)
 
 [node name="Bubble" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -3.77726, -0.0136244, 1.33923)
+transform = Transform3D(1, 0, 0, 0, -0.999929, 0.0119204, 0, -0.0119204, -0.999929, -3.77726, -0.0136244, 1.33923)
 script = ExtResource("1_v64pe")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.220775, 0.00581163, -0.318599)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_olcdv")
 mesh = SubResource("SphereMesh_hpty1")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.227113, 0.0939482, -0.303565)
 shape = SubResource("BoxShape3D_q8e1m")

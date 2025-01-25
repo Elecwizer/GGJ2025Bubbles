@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dybnnowbvabs4"]
+[gd_scene load_steps=12 format=3 uid="uid://dybnnowbvabs4"]
 
 [ext_resource type="Script" path="res://البرمجة/اللاعب.gd" id="1_sd41a"]
 [ext_resource type="Shader" path="res://التأثيرات المرئية/Type1.gdshader" id="2_tq3jn"]
 [ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="3_6o68d"]
 [ext_resource type="Script" path="res://البرمجة/BubbleMeter.gd" id="3_mkn38"]
+[ext_resource type="AudioStream" uid="uid://jtbgx22o6qgr" path="res://SoundEffects/BackgroundMusic.mp3" id="5_wdcnw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_olcdv"]
 render_priority = 0
@@ -72,3 +73,11 @@ drag_and_drop_selection_enabled = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_tmt0d")
+
+[node name="Sound" type="AudioStreamPlayer3D" parent="."]
+
+[node name="BGM" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_wdcnw")
+volume_db = -28.0
+pitch_scale = 0.85
+autoplay = true

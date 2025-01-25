@@ -1,11 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dps11jcjr7n3t"]
+[gd_scene load_steps=2 format=3 uid="uid://dps11jcjr7n3t"]
 
-[ext_resource type="Texture2D" uid="uid://bmsu1t12cmacv" path="res://addons/kenney_prototype_textures/dark/texture_01.png" id="1_jtigx"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scm0m"]
-albedo_texture = ExtResource("1_jtigx")
-uv1_triplanar = true
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdcbq"]
+albedo_color = Color(0.211765, 0.254902, 0.266667, 1)
 
 [node name="Large Obstacle" type="CSGCombiner3D"]
-material_override = SubResource("StandardMaterial3D_scm0m")
+material_override = SubResource("StandardMaterial3D_gdcbq")
 use_collision = true

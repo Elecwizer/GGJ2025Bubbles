@@ -14,9 +14,13 @@ class_name المزايا
 @export var HP:float = 12
 var dead:bool = false
 
+signal die
+
 func onHit(damage:float = 3):
-	HP -= damage
-	if HP <= 0:
+	if HP > 0:
+		HP -= damage
+	else:
 		dead = true
-		
+		print("dead")
+
 @export var numberOfBubbles = 0

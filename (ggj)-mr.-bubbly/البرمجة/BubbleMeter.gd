@@ -13,3 +13,5 @@ func _process(_delta: float) -> void:
 		# (1/_delta) is used to linearize the time since _process is called (1/_delta) times within 1 second
 		$MeterBar.scale.y -= playerProperties.moistureMeter/(maximumTime*(1/_delta)) * playerProperties.moistureMultiplier
 		$MeterBar.position.y += playerProperties.moistureMeter/(maximumTime*(1/_delta)) * playerProperties.moistureMultiplier * 0.5
+	else:
+		print("game over")

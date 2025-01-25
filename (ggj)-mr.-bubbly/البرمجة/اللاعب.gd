@@ -1,6 +1,8 @@
 extends CharacterBody3D
 class_name playerScript
 
+signal TouchedWater
+
 var playerProperties: المزايا = preload("res://الموارد/اللاعب/مزايا.tres")
 const CAMERA_DRAG = 0.05
 
@@ -11,21 +13,19 @@ func updateSize(mult: float) -> void:
 	playerProperties.sizeMultiplier = mult
 	scale = Vector3(scale.x * playerProperties.sizeMultiplier,scale.y,scale.z * playerProperties.sizeMultiplier)
 	changeSpeed(playerProperties.playerSpeed*(1/mult**1.2)) #semi-exponential decrease in speed as size increases
-	%Camera3D.size += mult-1 # update the camera's y position to keep the height static
+	%PlayerCamera.size += mult-1 # update the camera's y position to keep the height static
 	
+func on_water_touch(isTouched: bool) -> void:
+	if isTouched:
+		playerProperties.moistureMultiplier = 6
+	else:
+		playerProperties.moistureMultiplier = 1
+
 func _ready() -> void:
-	playerProperties.moistureMeter = %MeterBar.scale.y # calibrate the scales
-	updateSize(1)
+	TouchedWater.connect(on_water_touch)
 
-const maximumTime := 15.0 #in seconds
 func _process(_delta: float) -> void:
-	
-	#Moisture meter bar depletion
-	if(%MeterBar.scale.y > 0):
-		# (1/_delta) is used to linearize the time since _process is called (1/_delta) times within 1 second
-		%MeterBar.scale.y -= playerProperties.moistureMeter/(maximumTime*(1/_delta)) * playerProperties.moistureMultiplier
-		%MeterBar.position.y += playerProperties.moistureMeter/(maximumTime*(1/_delta)) * playerProperties.moistureMultiplier * 0.5
-
+	pass
 
 var canMove = true
 var decayFactor: float = 0
@@ -34,14 +34,14 @@ var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normal
 var additionalSpeed := 3.5*int(Input.is_action_pressed("Sprint"))
 
 func _physics_process(_delta: float) -> void:
-	
 	# Camera drag
-	%Camera3D.position.x += CAMERA_DRAG*(position.x-%Camera3D.position.x)
-	%Camera3D.position.z += CAMERA_DRAG*(position.z-%Camera3D.position.z)
+	%PlayerCamera.position.x += CAMERA_DRAG*(position.x-%PlayerCamera.position.x)
+	%PlayerCamera.position.z += CAMERA_DRAG*(position.z-%PlayerCamera.position.z)
 	
+	# Deplete the moisture meter when sprinting
 	if(Input.is_action_pressed("Sprint")):
 		playerProperties.moistureMultiplier = 4
-	else:
+	elif Input.is_action_just_released("Sprint"):
 		playerProperties.moistureMultiplier = 1
 	
 	# Bounce effect
@@ -69,6 +69,5 @@ func _physics_process(_delta: float) -> void:
 	var collision = move_and_collide(velocity * _delta)
 		
 	if collision and canMove:
-		print(collision.get_collider().has_meta("Water"))
 		if Input.is_action_pressed("Sprint"):
 			canMove = false

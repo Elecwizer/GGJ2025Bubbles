@@ -51,6 +51,7 @@ scale = Vector2(73.25, 515.75)
 texture = SubResource("CanvasTexture_yntid")
 
 [node name="MeterBar" type="Sprite2D" parent="UI/BubbleMeter"]
+unique_name_in_owner = true
 light_mask = 0
 position = Vector2(46, 266.938)
 scale = Vector2(38, 517.875)

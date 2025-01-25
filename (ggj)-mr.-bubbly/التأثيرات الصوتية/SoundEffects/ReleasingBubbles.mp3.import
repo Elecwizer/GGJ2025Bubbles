@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://u4hamwn6y58k"
+path="res://.godot/imported/ReleasingBubbles.mp3-858b0c3e02037113224fc5ad609b3a9b.mp3str"
+
+[deps]
+
+source_file="res://التأثيرات الصوتية/SoundEffects/ReleasingBubbles.mp3"
+dest_files=["res://.godot/imported/ReleasingBubbles.mp3-858b0c3e02037113224fc5ad609b3a9b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

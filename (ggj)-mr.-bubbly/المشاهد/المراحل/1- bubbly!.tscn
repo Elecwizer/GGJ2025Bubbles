@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_jmmf1"]
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_kjgqb"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_xo1kr"]
-[ext_resource type="PackedScene" path="res://المشاهد/bubble_group.tscn" id="5_a6glg"]
+[ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_a6glg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umr8c"]
 albedo_color = Color(0.984314, 0.984314, 0.984314, 1)

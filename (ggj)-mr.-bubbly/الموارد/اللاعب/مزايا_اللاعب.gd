@@ -4,9 +4,7 @@ class_name المزايا
 #Moisture meter properties
 @export var moistureMeter: float
 @export var moistureMultiplier: float = 1.0
-@export var barTime: float = 60 # in seconds
-
-
+@export var barTime: float = 120 # in seconds
 
 #Player properties
 @export var sizeMultiplier: float = 1.0
@@ -15,8 +13,6 @@ class_name المزايا
 
 @export var HP:float = 12
 var dead:bool = false
-
-
 
 func onHit(damage:float = 3):
 	HP -= damage

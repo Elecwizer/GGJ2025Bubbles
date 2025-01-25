@@ -14,4 +14,4 @@ func _process(_delta: float) -> void:
 		$MeterBar.scale.y -= playerProperties.moistureMeter/(maximumTime*(1/_delta)) * playerProperties.moistureMultiplier
 		$MeterBar.position.y += playerProperties.moistureMeter/(maximumTime*(1/_delta)) * playerProperties.moistureMultiplier * 0.5
 	else:
-		print("game over")
+		get_tree().change_scene_to_file("res://المشاهد/GameOver.tscn")

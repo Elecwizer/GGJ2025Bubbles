@@ -7,7 +7,7 @@ height = 21.2233
 radius = 0.77158
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p3fc"]
-albedo_color = Color(0.210558, 0.566361, 0.734149, 1)
+albedo_color = Color(0.219608, 0.517647, 0.941176, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_yv4t2"]
 

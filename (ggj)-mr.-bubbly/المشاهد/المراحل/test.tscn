@@ -6,11 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_m656j"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_43x4n"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="5_lwfkv"]
-
-[ext_resource type="PackedScene" uid="uid://brkxncl7pe4jo" path="res://المشاهد/bubble.tscn" id="6_u7xfj"]
+[ext_resource type="PackedScene" uid="uid://bijtnhpacdf8l" path="res://المشاهد/bubble.tscn" id="6_u7xfj"]
 [ext_resource type="PackedScene" uid="uid://dqn2g0bsbwl72" path="res://المشاهد/water_spots.tscn" id="7_iju4i"]
-[ext_resource type="PackedScene" uid="uid://di83iswsdv2t6" path="res://المشاهد/pod.tscn" id="9_i0dqd"]
-
+[ext_resource type="PackedScene" path="res://المشاهد/pod.tscn" id="9_i0dqd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
 albedo_texture = ExtResource("3_m656j")

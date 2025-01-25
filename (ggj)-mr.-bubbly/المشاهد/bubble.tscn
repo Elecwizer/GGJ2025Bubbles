@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://brkxncl7pe4jo"]
+[gd_scene load_steps=6 format=3 uid="uid://bijtnhpacdf8l"]
 
 [ext_resource type="Script" path="res://البرمجة/Bubble.gd" id="1_v64pe"]
 [ext_resource type="Shader" path="res://التأثيرات المرئية/Type1.gdshader" id="2_140xr"]

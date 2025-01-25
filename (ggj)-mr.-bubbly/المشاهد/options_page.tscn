@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://x18e6rl7y33c"]
+
+[ext_resource type="Texture2D" uid="uid://bolycepi7n7ue" path="res://الموارد/UI/202501241636_32019_page-0001.jpg" id="1_sovep"]
+[ext_resource type="Script" path="res://المشاهد/options_page.gd" id="1_xyokm"]
+[ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="2_exy4i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irg3d"]
+texture = ExtResource("1_sovep")
+
+[node name="options_page" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xyokm")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_irg3d")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 78.0
+offset_right = 725.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_exy4i")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 188.0
+offset_right = 986.0
+offset_bottom = 482.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Volum_level" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_exy4i")
+theme_override_font_sizes/font_size = 26
+text = "Volum level"
+
+[node name="volum" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Mute" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("2_exy4i")
+theme_override_font_sizes/font_size = 26
+text = "Mute"
+
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="full_screen" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_exy4i")
+text = "Full Screen"
+
+[node name="full_screen2" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_exy4i")
+text = "Windowed"
+
+[node name="full_screen3" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_exy4i")
+text = "Home"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/volum" to="." method="_on_volum_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/full_screen" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/full_screen2" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/full_screen2" to="." method="_on_full_screen_2_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/full_screen3" to="." method="_on_full_screen_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/full_screen3" to="." method="_on_full_screen_3_pressed"]

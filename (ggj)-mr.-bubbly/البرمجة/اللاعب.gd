@@ -37,12 +37,30 @@ func on_bubble_touch() -> void:
 	updateSize(sizeIncrease)
 	pass
 
+@export var moistureMeter: float
+@export var moistureMultiplier: float = 1.0
+@export var barTime: float = 30 # in seconds
+
+#Player properties
+@export var sizeMultiplier: float = 1.0
+@export var playerSpeed: float = 3.0
+@export var slip: float = 0.0
+
+@export var HP:float = 12
+@export var numberOfBubbles = 0
+
 func _ready() -> void:
 	PlaySound.connect(play_sound)
 	TouchedWater.connect(on_water_touch)
 	TouchedBubbles.connect(on_bubble_touch)
-	#Hit.connect(hitted)
-	#die.connect(dead)
+	
+	# next level properties
+	playerProperties.barTime = barTime
+	playerProperties.moistureMultiplier = moistureMultiplier
+	playerProperties.sizeMultiplier = sizeMultiplier
+	playerProperties.playerSpeed = playerSpeed
+	playerProperties.HP = HP
+	playerProperties.numberOfBubbles = numberOfBubbles
 
 #func hitted():
 	#playerProperties.onHit()

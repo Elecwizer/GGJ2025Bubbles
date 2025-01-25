@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b5v4s8qtnfb4h"]
+[gd_scene load_steps=9 format=3 uid="uid://b5v4s8qtnfb4h"]
 
 [ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="1_d6mtu"]
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_uapty"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_dtasc"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_d66bu"]
 [ext_resource type="PackedScene" uid="uid://dqn2g0bsbwl72" path="res://المشاهد/water_spots.tscn" id="6_arknc"]
+[ext_resource type="PackedScene" uid="uid://di83iswsdv2t6" path="res://المشاهد/pod.tscn" id="7_j10c8"]
+[ext_resource type="PackedScene" uid="uid://cqxrrnfbsyu6t" path="res://المشاهد/main_menu.tscn" id="8_yji85"]
 
 [node name="4-BubbleFriends(probably)!!!" type="Node3D"]
 
@@ -19,32 +21,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14749, 0.75, 3.37364)
 transform = Transform3D(0.866025, 5.13692e-07, 0.5, -0.482963, -0.258819, 0.836516, 0.12941, -0.965926, -0.224144, 0, 3, 0)
 
 [node name="Ground" parent="." instance=ExtResource("1_d6mtu")]
+collision_layer = 2
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(16, 1, 9)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -5)
-size = Vector3(16, 1, 1)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 5)
-size = Vector3(16, 1, 1)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, 0)
-size = Vector3(1, 1, 11)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 0, 0)
-size = Vector3(1, 1, 11)
 
 [node name="Large Obstacle" parent="." instance=ExtResource("4_dtasc")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Large Obstacle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.51234, 0, 1.45426)
 size = Vector3(8, 1, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, 0)
+size = Vector3(1, 1, 11)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 0, 0)
+size = Vector3(1, 1, 11)
 
 [node name="BubbleGroup" parent="." instance=ExtResource("5_d66bu")]
 transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, 5.79327, -4.76837e-07, 3.2349)
@@ -66,3 +69,8 @@ transform = Transform3D(1, 0, 0, 0, 0.0876814, 0, 0, 0, 1, -4.84029, 0.0420275, 
 
 [node name="WaterSpots5" parent="." instance=ExtResource("6_arknc")]
 transform = Transform3D(1, 0, 0, 0, 0.0876814, 0, 0, 0, 1, -2.88448, 0.0420275, -1.65044)
+
+[node name="Pod" parent="." instance=ExtResource("7_j10c8")]
+transform = Transform3D(2.19379, 0, 0, 0, 1, 0, 0, 0, 2.13428, 5.2591, 0.0116701, -2.68028)
+nextLevel = ExtResource("8_yji85")
+minimumBubbles = 2

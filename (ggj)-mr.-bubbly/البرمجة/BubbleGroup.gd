@@ -7,6 +7,6 @@ func _ready() -> void:
 
 func on_touch(body: Node3D) -> void:
 	if body.has_meta("Player"):
-		body.emit_signal("PlaySound","res://SoundEffects/AbsorbingBubbles.mp3")
+		body.emit_signal("PlaySound","res://التأثيرات الصوتية/SoundEffects/AbsorbingBubbles.mp3")
 		body.emit_signal("TouchedBubbles")
 		queue_free()

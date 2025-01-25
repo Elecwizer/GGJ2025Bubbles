@@ -5,7 +5,7 @@ signal TouchedWater
 signal PlaySound
 signal TouchedBubbles
 const CAMERA_DRAG = 0.05
-const sizeIncrease = 1.75
+const sizeIncrease = 1.45
 
 var playerProperties: المزايا = preload("res://الموارد/اللاعب/مزايا.tres")
 

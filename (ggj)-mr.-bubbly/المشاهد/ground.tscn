@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://i74qtac5rs5n"]
+
+[ext_resource type="Texture2D" uid="uid://btyss1nob4h7i" path="res://addons/kenney_prototype_textures/orange/texture_01.png" id="1_ven1h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scm0m"]
+albedo_texture = ExtResource("1_ven1h")
+uv1_triplanar = true
+
+[node name="Ground" type="CSGCombiner3D"]
+material_override = SubResource("StandardMaterial3D_scm0m")
+use_collision = true

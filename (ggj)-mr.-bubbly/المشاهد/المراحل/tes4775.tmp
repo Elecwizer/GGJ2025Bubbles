@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://3i7ds7brcc2v"]
+[gd_scene load_steps=8 format=3 uid="uid://3i7ds7brcc2v"]
 
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_oij6t"]
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="2_cwmnc"]
@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_m656j"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_43x4n"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="5_lwfkv"]
-[ext_resource type="PackedScene" uid="uid://bijtnhpacdf8l" path="res://المشاهد/bubble.tscn" id="6_u7xfj"]
-[ext_resource type="PackedScene" uid="uid://dald1n4yus88w" path="res://المشاهد/water_spots.tscn" id="7_iju4i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
 albedo_texture = ExtResource("3_m656j")
@@ -50,10 +48,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
 material_override = SubResource("StandardMaterial3D_g2446")
 size = Vector3(16, 0.5, 17)
 
-[node name="Bubble" parent="." instance=ExtResource("6_u7xfj")]
-
-[node name="WaterSpots" parent="." instance=ExtResource("7_iju4i")]
-transform = Transform3D(1, 0, 0, 0, 0.0876814, 0, 0, 0, 1, -4.93425, 0.0420275, -1.49059)
-
 [node name="BubbleGroup" parent="." instance=ExtResource("5_43x4n")]
-transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -4.82566, -0.0375015, 2.89122)
+transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -3.77726, -0.0136244, 1.33923)

@@ -5,6 +5,7 @@ signal TouchedWater
 signal PlaySound
 signal TouchedBubbles
 const CAMERA_DRAG = 0.05
+const sizeIncrease = 1.75
 
 var playerProperties: المزايا = preload("res://الموارد/اللاعب/مزايا.tres")
 var numberOfBubbles = 0
@@ -32,14 +33,23 @@ func play_sound(resource: String) -> void:
 
 func on_bubble_touch() -> void:
 	numberOfBubbles += 1
-	updateSize(playerProperties.sizeMultiplier*1.75)
+	updateSize(sizeIncrease)
 	pass
 
 func _ready() -> void:
 	PlaySound.connect(play_sound)
 	TouchedWater.connect(on_water_touch)
 	TouchedBubbles.connect(on_bubble_touch)
+	
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and numberOfBubbles > 0:
+		var relativePlayer = Vector2(DisplayServer.window_get_size().x / 2,DisplayServer.window_get_size().y / 2)
+		var relativeVector = event.position - relativePlayer
+		numberOfBubbles -= 1
+		updateSize((1/sizeIncrease))
+		print(relativeVector.normalized())
+		
 func _process(_delta: float) -> void:
 	pass
 

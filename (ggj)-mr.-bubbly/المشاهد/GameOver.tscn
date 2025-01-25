@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://jwegvyrrkfqg"]
+
+[ext_resource type="Script" path="res://المشاهد/game_over.gd" id="1_ogg0q"]
+[ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="2_147av"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_ogg0q")
+
+[node name="GraphFrame" type="GraphFrame" parent="."]
+offset_right = 1153.0
+offset_bottom = 653.0
+
+[node name="Game_Title" type="Label" parent="."]
+offset_left = 304.0
+offset_top = 259.0
+offset_right = 835.0
+offset_bottom = 373.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_147av")
+theme_override_font_sizes/font_size = 72
+text = "GAME OVER"

@@ -4,9 +4,7 @@
 [ext_resource type="Shader" path="res://التأثيرات المرئية/Type1.gdshader" id="2_tq3jn"]
 [ext_resource type="FontFile" uid="uid://b237vrrryd1e" path="res://الموارد/UI/Baby Gemoy.ttf" id="3_6o68d"]
 [ext_resource type="Script" path="res://البرمجة/BubbleMeter.gd" id="3_mkn38"]
-
-[ext_resource type="AudioStream" uid="uid://jtbgx22o6qgr" path="res://التأثيرات الصوتية/SoundEffects/BackgroundMusic.mp3" id="5_wdcnw"]
-
+[ext_resource type="AudioStream" uid="uid://jtbgx22o6qgr" path="res://SoundEffects/BackgroundMusic.mp3" id="5_wdcnw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hpa1j"]
 render_priority = 0

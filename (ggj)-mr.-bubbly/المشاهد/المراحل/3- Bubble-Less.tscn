@@ -1,3 +1,77 @@
-[gd_scene format=3 uid="uid://bl3r562ji2g15"]
+[gd_scene load_steps=11 format=3 uid="uid://bl3r562ji2g15"]
+
+[ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_nr7kl"]
+[ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="2_ea0i0"]
+[ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="3_ovr78"]
+[ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_akk0h"]
+[ext_resource type="PackedScene" uid="uid://bx61pmucw2tct" path="res://المشاهد/ماء.tscn" id="5_6udat"]
+[ext_resource type="PackedScene" uid="uid://gp1pqwwmwmkv" path="res://المشاهد/مساحة_مائية.tscn" id="6_giic8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyljd"]
+size = Vector3(2, 1, 1.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xg68f"]
+size = Vector3(1, 1, 4.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ou8rd"]
+size = Vector3(1, 1, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gohjq"]
+size = Vector3(2, 1, 1.75)
 
 [node name="3-Bubble-less" type="Node3D"]
+
+[node name="PlayerCamera" parent="." instance=ExtResource("1_nr7kl")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, -0.375968, 5.69706, -0.0853606)
+
+[node name="Player" parent="." instance=ExtResource("2_ea0i0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70031, 0.75, -2.38946)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 4.10454e-07, 0.5, -0.482963, -0.258819, 0.836516, 0.12941, -0.965926, -0.224144, 0, 3, 0)
+
+[node name="Ground" parent="." instance=ExtResource("3_ovr78")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(16, 1, 9)
+
+[node name="Large Obstacle" parent="." instance=ExtResource("4_akk0h")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98766, 0, 2.45426)
+size = Vector3(1, 1, 4)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97801, -0.0105495, -2.89406)
+size = Vector3(1, 1, 3.2)
+
+[node name="Water" parent="." instance=ExtResource("5_6udat")]
+
+[node name="Area3D2" parent="Water" instance=ExtResource("6_giic8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0, 2.25)
+
+[node name="CollisionBox" type="CollisionShape3D" parent="Water/Area3D2"]
+shape = SubResource("BoxShape3D_qyljd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water/Area3D2"]
+mesh = SubResource("BoxMesh_xg68f")
+
+[node name="Area3D3" parent="Water" instance=ExtResource("6_giic8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 0, -3)
+
+[node name="CollisionBox" type="CollisionShape3D" parent="Water/Area3D3"]
+shape = SubResource("BoxShape3D_qyljd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water/Area3D3"]
+mesh = SubResource("BoxMesh_ou8rd")
+
+[node name="Area3D4" parent="Water" instance=ExtResource("6_giic8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -0.425)
+
+[node name="CollisionBox" type="CollisionShape3D" parent="Water/Area3D4"]
+shape = SubResource("BoxShape3D_qyljd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Water/Area3D4"]
+mesh = SubResource("BoxMesh_gohjq")

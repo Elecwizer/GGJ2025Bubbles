@@ -23,7 +23,7 @@ func on_water_touch(isTouched: bool) -> void:
 		playerProperties.moistureMultiplier = 6
 	else:
 		playerProperties.moistureMultiplier = 1
-		
+
 func play_sound(resource: String) -> void:
 	var res = load(resource)
 	$Sound.stream = res

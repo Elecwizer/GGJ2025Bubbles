@@ -44,7 +44,7 @@ func _physics_process(_delta: float) -> void:
 	else:
 		playerProperties.moistureMultiplier = 1
 	
-	# bounce effect
+	# Bounce effect
 	if not canMove:
 		velocity.x = -direction.x * (25 - decayFactor)
 		velocity.z = -direction.z * (25 - decayFactor)
@@ -66,8 +66,9 @@ func _physics_process(_delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, playerProperties.playerSpeed + additionalSpeed)
 			velocity.z = move_toward(velocity.z, 0, playerProperties.playerSpeed + additionalSpeed)
 		
-	var collision = move_and_slide()
+	var collision = move_and_collide(velocity * _delta)
 		
-	
-	if collision and Input.is_action_pressed("Sprint") and canMove:
-		canMove = false
+	if collision and canMove:
+		print(collision.get_collider().has_meta("Water"))
+		if Input.is_action_pressed("Sprint"):
+			canMove = false

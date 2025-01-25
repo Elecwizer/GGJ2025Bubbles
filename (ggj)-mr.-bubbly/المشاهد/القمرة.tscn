@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dd1l2mbjhsrny"]
+
+[node name="PlayerCamera" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, -0.375968, 5.69706, -0.0853606)
+projection = 1
+size = 7.0

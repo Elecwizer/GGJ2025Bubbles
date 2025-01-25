@@ -105,3 +105,5 @@ theme_override_font_sizes/font_size = 72
 text = "Bubbles bound"
 
 [connection signal="pressed" from="Select_level" to="." method="_on_select_level_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]

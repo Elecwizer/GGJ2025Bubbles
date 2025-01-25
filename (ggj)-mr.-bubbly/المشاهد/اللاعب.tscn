@@ -33,6 +33,7 @@ width = 2
 radius = 0.536022
 
 [node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 script = ExtResource("1_sd41a")
 metadata/Player = false
 
@@ -71,7 +72,6 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0239437, 0)
 shape = SubResource("SphereShape3D_tmt0d")
 
 [node name="Sound" type="AudioStreamPlayer3D" parent="."]

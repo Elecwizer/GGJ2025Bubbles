@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://3i7ds7brcc2v"]
+
+[gd_scene load_steps=11 format=3 uid="uid://3i7ds7brcc2v"]
 
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_oij6t"]
+[ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="2_cwmnc"]
 [ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="2_f86u6"]
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_m656j"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_43x4n"]
@@ -12,13 +14,10 @@ albedo_texture = ExtResource("3_m656j")
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_oij6t")]
-transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -0.000487804, 0.856724, 0.0150979)
+transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, 0, 0, 0)
 
-[node name="PlayerCamera" type="Camera3D" parent="."]
+[node name="PlayerCamera" parent="." instance=ExtResource("2_cwmnc")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, 0.0108759, 4.00538, 0.00931395)
-projection = 1
-size = 5.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -1.54033e-08, 0.5, -0.482963, -0.258819, 0.836516, 0.12941, -0.965926, -0.224144, 0, 3, 0)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://kct5kqe57kc4"]
 
-[ext_resource type="Texture2D" uid="uid://btyss1nob4h7i" path="res://addons/kenney_prototype_textures/orange/texture_01.png" id="1_mlt7i"]
+[ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="1_ws1a3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpvhq"]
-albedo_texture = ExtResource("1_mlt7i")
+albedo_texture = ExtResource("1_ws1a3")
 uv1_triplanar = true
 
 [node name="Small obstacle" type="CSGCombiner3D"]

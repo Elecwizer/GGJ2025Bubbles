@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://gp1pqwwmwmkv"]
+
+[ext_resource type="Script" path="res://البرمجة/Water.gd" id="1_7xvlo"]
+
+[node name="Area3D" type="Area3D"]
+script = ExtResource("1_7xvlo")

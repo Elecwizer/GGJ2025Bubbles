@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://kw4b746bnxce"]
+[gd_scene load_steps=12 format=3 uid="uid://kw4b746bnxce"]
 
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_rhtd5"]
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="2_5asnc"]
@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_lgr31"]
 [ext_resource type="PackedScene" uid="uid://cf5uhd72d4ttu" path="res://المشاهد/الشوك.tscn" id="6_o7cl0"]
 [ext_resource type="Material" uid="uid://b3oustijkmr5k" path="res://الألوان والرسومات/Spikes.material" id="7_ganvu"]
+[ext_resource type="PackedScene" uid="uid://di83iswsdv2t6" path="res://المشاهد/pod.tscn" id="8_doouf"]
+[ext_resource type="PackedScene" uid="uid://bl3r562ji2g15" path="res://المشاهد/المراحل/3- Bubble-Less.tscn" id="9_5mdcx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dp2yv"]
-size = Vector3(3.97518, 1, 0.966888)
+size = Vector3(7.6, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_4swim"]
 
@@ -19,58 +21,54 @@ size = Vector3(3.97518, 1, 0.966888)
 unique_name_in_owner = true
 
 [node name="Player" parent="." instance=ExtResource("2_5asnc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70031, 0.75, -2.38946)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.70031, 0.155044, -2.38946)
+barTime = 25.0
+playerSpeed = 3.5
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, 4.10454e-07, 0.5, -0.482963, -0.258819, 0.836516, 0.12941, -0.965926, -0.224144, 0, 3, 0)
 
 [node name="Ground" parent="." instance=ExtResource("3_6r57h")]
+layers = 2
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(16, 1, 9)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Ground"]
+[node name="Large Obstacle" parent="." instance=ExtResource("4_3717x")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0123429, 0, 2.85426)
+size = Vector3(7, 1, 3.2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Large Obstacle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0219922, -0.0105495, -2.89406)
+size = Vector3(7, 1, 3.2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Large Obstacle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -5)
 size = Vector3(16, 1, 1)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Ground"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Large Obstacle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 5)
 size = Vector3(16, 1, 1)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Ground"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Large Obstacle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, 0)
 size = Vector3(1, 1, 11)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Ground"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Large Obstacle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 0, 0)
 size = Vector3(1, 1, 11)
-
-[node name="Large Obstacle" parent="." instance=ExtResource("4_3717x")]
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Large Obstacle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0219922, -0.0105495, 0.35594)
-size = Vector3(7, 1, 9.7)
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Large Obstacle"]
-operation = 2
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Large Obstacle/CSGCombiner3D"]
-transform = Transform3D(0.896896, 0, 0.442242, 0, 1, 0, -0.442242, 0, 0.896896, 1.34325, 0, 0.766092)
-size = Vector3(6.366, 1, 2.77933)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="Large Obstacle/CSGCombiner3D"]
-transform = Transform3D(0.812613, 0, -0.582804, 0, 1, 0, 0.582804, 0, 0.812613, -2.24011, 0, 0.0183263)
-size = Vector3(5.63727, 1, 2.52054)
 
 [node name="BubbleGroup2" parent="." instance=ExtResource("5_lgr31")]
 transform = Transform3D(1, 0, 0, 0, 0.999336, 0.0364694, 0, -0.0364694, 0.999336, -6.02, 0, 3.051)
 
 [node name="spike" parent="." instance=ExtResource("6_o7cl0")]
-transform = Transform3D(0.898664, 0, 0.438638, 0, 1, 0, -0.438638, 0, 0.898664, 0.290779, 0.5, -0.0392979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.8)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="spike"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, -0.221603)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, 0, 5.96046e-08)
 shape = SubResource("BoxShape3D_dp2yv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="spike"]
@@ -93,29 +91,21 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
-[node name="spike2" parent="." instance=ExtResource("6_o7cl0")]
-transform = Transform3D(-0.737702, 0, 0.675127, 0, 1, 0, -0.675127, 0, -0.737702, -0.544843, 0.5, 2.75305)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="spike2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38759, 0, -0.159119)
-shape = SubResource("BoxShape3D_dp2yv")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="spike2"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, -0.3)
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="spike"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -1, 0, -0.3)
 material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="spike2"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 1, 0, -0.3)
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="spike"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -2, 0, -0.3)
 material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="spike2"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2, 0, -0.3)
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="spike"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -3, 0, -0.3)
 material_override = ExtResource("7_ganvu")
 mesh = SubResource("BoxMesh_4swim")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="spike2"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 3, 0, -0.3)
-material_override = ExtResource("7_ganvu")
-mesh = SubResource("BoxMesh_4swim")
+[node name="Pod" parent="." instance=ExtResource("8_doouf")]
+transform = Transform3D(2.19379, 0, 0, 0, 1, 0, 0, 0, 2.13428, -5.81851, 0.0116701, -2.99644)
+nextLevel = ExtResource("9_5mdcx")

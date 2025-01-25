@@ -12,4 +12,3 @@ func Hit(body: Node3D) -> void:
 		print(body.playerProperties.HP)
 		if body.playerProperties.dead == true:
 			body.emit_signal("PlaySound","res://التأثيرات الصوتية/SoundEffects/BackgroundMusic.mp3")
-			body.playerProperties.playerSpeed = 0

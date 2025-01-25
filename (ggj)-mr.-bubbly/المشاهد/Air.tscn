@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://3p6j0bv72gne"]
-
-[ext_resource type="Script" path="res://البرمجة/air.gd" id="1_ry0op"]
-
-[node name="air tunnel" type="Area3D"]
-script = ExtResource("1_ry0op")

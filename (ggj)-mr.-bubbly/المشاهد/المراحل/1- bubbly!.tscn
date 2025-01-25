@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_kjgqb"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_xo1kr"]
 [ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="5_a6glg"]
-[ext_resource type="PackedScene" uid="uid://cbofsouu45dxq" path="res://المشاهد/pod.tscn" id="6_7b7yb"]
+[ext_resource type="PackedScene" uid="uid://di83iswsdv2t6" path="res://المشاهد/pod.tscn" id="6_7b7yb"]
 [ext_resource type="PackedScene" uid="uid://kw4b746bnxce" path="res://المشاهد/المراحل/2- Bubbles!.tscn" id="7_vkbo4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_umr8c"]

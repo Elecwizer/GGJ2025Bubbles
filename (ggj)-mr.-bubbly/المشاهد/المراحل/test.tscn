@@ -1,11 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://3i7ds7brcc2v"]
+[gd_scene load_steps=9 format=3 uid="uid://3i7ds7brcc2v"]
 
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_oij6t"]
 [ext_resource type="Texture2D" uid="uid://btyss1nob4h7i" path="res://addons/kenney_prototype_textures/orange/texture_01.png" id="2_hbhnd"]
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_m656j"]
 [ext_resource type="PackedScene" uid="uid://kct5kqe57kc4" path="res://المشاهد/عوائق_للصغير.tscn" id="4_rusw0"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="5_lwfkv"]
-[ext_resource type="Script" path="res://البرمجة/Water.gd" id="7_b21bo"]
+[ext_resource type="PackedScene" uid="uid://cq155cwsh11eg" path="res://المشاهد/bubble_group.tscn" id="6_fjs6k"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scm0m"]
 albedo_texture = ExtResource("2_hbhnd")
@@ -13,11 +13,6 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
 albedo_texture = ExtResource("3_m656j")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1fleq"]
-size = Vector3(1.04492, 2.2016, 3.04651)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ashyt"]
 
 [node name="World" type="Node3D"]
 
@@ -69,14 +64,5 @@ size = Vector3(2, 3.72742, 2)
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1.66165, -0.0997515, 0.45389)
 size = Vector3(1, 1, 2)
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52342, 0.837205, 0)
-script = ExtResource("7_b21bo")
-
-[node name="CollisionBox" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155475, 0.348297, 0.109027)
-shape = SubResource("BoxShape3D_1fleq")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.37048, 0, 0, 0)
-mesh = SubResource("BoxMesh_ashyt")
+[node name="BubbleGroup" parent="." instance=ExtResource("6_fjs6k")]
+transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -4.36399, 0.864217, 0.00945191)

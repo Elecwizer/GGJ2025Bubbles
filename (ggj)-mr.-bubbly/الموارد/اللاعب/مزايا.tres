@@ -6,9 +6,9 @@
 script = ExtResource("1_t4wbv")
 moistureMeter = 0.0
 moistureMultiplier = 1.0
-barTime = 20.0
+barTime = 40.0
 sizeMultiplier = 1.0
-playerSpeed = 5.0
+playerSpeed = 4.0
 slip = 0.0
 HP = 12.0
 numberOfBubbles = 0

@@ -1,14 +1,18 @@
 [gd_scene load_steps=10 format=3 uid="uid://3i7ds7brcc2v"]
 
+
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_oij6t"]
 [ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="2_f86u6"]
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_m656j"]
 [ext_resource type="PackedScene" uid="uid://kct5kqe57kc4" path="res://المشاهد/عوائق_للصغير.tscn" id="4_rusw0"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="5_lwfkv"]
+
 [ext_resource type="PackedScene" uid="uid://gp1pqwwmwmkv" path="res://المشاهد/مساحة_مائية.tscn" id="6_4x4ca"]
+
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
 albedo_texture = ExtResource("3_m656j")
+
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sisfd"]
 size = Vector3(1.04492, 2.2016, 3.04651)

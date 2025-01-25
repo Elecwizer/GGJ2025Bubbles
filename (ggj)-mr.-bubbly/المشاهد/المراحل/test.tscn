@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://3i7ds7brcc2v"]
+[gd_scene load_steps=11 format=3 uid="uid://3i7ds7brcc2v"]
 
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_oij6t"]
 [ext_resource type="Texture2D" uid="uid://btyss1nob4h7i" path="res://addons/kenney_prototype_textures/orange/texture_01.png" id="2_hbhnd"]
 [ext_resource type="Texture2D" uid="uid://bpp5nb04ci0jt" path="res://addons/kenney_prototype_textures/light/texture_01.png" id="3_m656j"]
 [ext_resource type="PackedScene" uid="uid://kct5kqe57kc4" path="res://المشاهد/عوائق_للصغير.tscn" id="4_rusw0"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="5_lwfkv"]
+[ext_resource type="Script" path="res://البرمجة/Water.gd" id="7_b21bo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_scm0m"]
 albedo_texture = ExtResource("2_hbhnd")
@@ -13,14 +14,19 @@ uv1_triplanar = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2446"]
 albedo_texture = ExtResource("3_m656j")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_1fleq"]
+size = Vector3(1.04492, 2.2016, 3.04651)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ashyt"]
+
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_oij6t")]
 transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -0.000487804, 0.856724, 0.0150979)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="PlayerCamera" type="Camera3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, 0, 4, 0.015)
+transform = Transform3D(1, 0, 0, 0, -0.0182377, 0.999834, 0, -0.999834, -0.0182377, 0.0108759, 4.00538, 0.00931395)
 projection = 1
 size = 5.0
 
@@ -62,3 +68,15 @@ size = Vector3(2, 3.72742, 2)
 [node name="CSGBox3D2" type="CSGBox3D" parent="Ground/Large Obstacle"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -1.66165, -0.0997515, 0.45389)
 size = Vector3(1, 1, 2)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.52342, 0.837205, 0)
+script = ExtResource("7_b21bo")
+
+[node name="CollisionBox" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155475, 0.348297, 0.109027)
+shape = SubResource("BoxShape3D_1fleq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 3.37048, 0, 0, 0)
+mesh = SubResource("BoxMesh_ashyt")

@@ -4,7 +4,7 @@ class_name المزايا
 #Moisture meter properties
 @export var moistureMeter: float
 @export var moistureMultiplier: float = 1.0
-@export var barTime: float = 20 # in seconds
+@export var barTime: float = 60 # in seconds
 
 #Player properties
 @export var sizeMultiplier: float = 1.0

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cf5uhd72d4ttu"]
+
+[ext_resource type="Script" path="res://المشاهد/الشوك.gd" id="1_mcoqs"]
+
+[node name="spike" type="Area3D"]
+script = ExtResource("1_mcoqs")

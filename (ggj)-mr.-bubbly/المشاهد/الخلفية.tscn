@@ -8,3 +8,4 @@ uv1_triplanar = true
 
 [node name="Ground" type="CSGCombiner3D"]
 material_override = SubResource("StandardMaterial3D_3ruum")
+use_collision = true

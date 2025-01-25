@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cym323ekby041"]
+[gd_scene load_steps=6 format=3 uid="uid://cym323ekby041"]
 
 [ext_resource type="PackedScene" uid="uid://bmwxduyj7xaww" path="res://المشاهد/الخلفية.tscn" id="1_jeubb"]
 [ext_resource type="PackedScene" uid="uid://dybnnowbvabs4" path="res://المشاهد/اللاعب.tscn" id="1_jmmf1"]
 [ext_resource type="PackedScene" uid="uid://dd1l2mbjhsrny" path="res://المشاهد/القمرة.tscn" id="1_kjgqb"]
 [ext_resource type="PackedScene" uid="uid://dps11jcjr7n3t" path="res://المشاهد/عوائق_للكبير.tscn" id="4_xo1kr"]
+[ext_resource type="PackedScene" path="res://المشاهد/bubble_group.tscn" id="5_a6glg"]
 
 [node name="1-Bubbly!" type="Node3D"]
 
@@ -22,6 +23,22 @@ transform = Transform3D(0.866025, -1.54033e-08, 0.5, -0.482963, -0.258819, 0.836
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(16, 1, 9)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, -5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 5)
+size = Vector3(16, 1, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4, 0, 0)
+size = Vector3(1, 1, 11)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.6, 0, 0)
+size = Vector3(1, 1, 11)
+
 [node name="Large Obstacle" parent="." instance=ExtResource("4_xo1kr")]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Large Obstacle"]
@@ -31,3 +48,9 @@ size = Vector3(1, 1, 5)
 [node name="CSGBox3D2" type="CSGBox3D" parent="Large Obstacle"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -2)
 size = Vector3(1, 1, 5)
+
+[node name="BubbleGroup2" parent="." instance=ExtResource("5_a6glg")]
+transform = Transform3D(1, 0, 0, 0, 0.999336, 0.0364694, 0, -0.0364694, 0.999336, -6.95, 0, -3.325)
+
+[node name="BubbleGroup" parent="." instance=ExtResource("5_a6glg")]
+transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, 6.803, 0, -3.018)

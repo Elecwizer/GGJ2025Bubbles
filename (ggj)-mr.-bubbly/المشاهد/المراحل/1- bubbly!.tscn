@@ -49,8 +49,8 @@ size = Vector3(1, 1, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -2)
 size = Vector3(1, 1, 5)
 
-[node name="BubbleGroup" parent="." instance=ExtResource("5_a6glg")]
-transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, 6.80288, -0.0375015, -3.01756)
+[node name="BubbleGroup2" parent="." instance=ExtResource("5_a6glg")]
+transform = Transform3D(1, 0, 0, 0, 0.999336, 0.0364694, 0, -0.0364694, 0.999336, -6.95, 0, -3.325)
 
-[node name="BubbleGroup" parent="BubbleGroup" instance=ExtResource("5_a6glg")]
-transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, -13.7533, -0.0869129, -0.308741)
+[node name="BubbleGroup" parent="." instance=ExtResource("5_a6glg")]
+transform = Transform3D(1, 0, 0, 0, 0.999834, 0.0182377, 0, -0.0182377, 0.999834, 6.803, 0, -3.018)

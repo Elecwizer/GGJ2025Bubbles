@@ -12,3 +12,4 @@ var dead:bool = false
 @export var sizeMultiplier: float = 1.0
 @export var playerSpeed: float = 3.0
 @export var slip: float = 0.0
+@export var numberOfBubbles = 0
